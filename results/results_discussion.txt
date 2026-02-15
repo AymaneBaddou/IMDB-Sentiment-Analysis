@@ -1,0 +1,24 @@
+1. ACCURACY REPORT
+The Multi-Layer Perceptron (MLP) model achieved a final test accuracy of 0.7794 (approx. 77.9%). 
+This indicates that the model can correctly predict the sentiment of a movie review nearly 78% of the time using only lexicon-based polarity scores (VADER and TextBlob). This is a strong baseline performance for a model that does not use complex word embeddings.
+
+2. LOSS CURVES ANALYSIS
+Referencing the generated plot 'loss_curves.png':
+The Binary Cross-Entropy loss started at approximately 0.55 and dropped sharply within the first 2-3 iterations. It stabilized very quickly, flattening out around iteration 20. 
+- The rapid drop and subsequent plateau confirm that the model successfully converged.
+- The fact that it converged in so few iterations (approx. 20) suggests that the relationship between the lexicon scores and the sentiment labels is relatively linear and easy for the MLP to learn.
+
+3. CONFUSION MATRIX ANALYSIS
+Referencing 'confusion_matrix.png':
+- True Negatives (Top-Left): 3916 reviews were correctly classified as Negative.
+- True Positives (Bottom-Right): 3872 reviews were correctly classified as Positive.
+- False Positives (Top-Right): 1045 Negative reviews were incorrectly classified as Positive.
+- False Negatives (Bottom-Left): 1167 Positive reviews were incorrectly classified as Negative.
+
+Observation: The model is slightly better at identifying Negative reviews (Recall for Negatives is 0.79 vs 0.77 for Positives). This suggests that negative sentiment words in the VADER/TextBlob lexicons might be more distinct or heavily weighted than positive ones.
+
+4. BRIEF RESULTS DISCUSSION
+The goal of this assignment was to classify IMDB reviews using an MLP trained on sentiment lexicon features.
+- Performance: With an F1-score of 0.78 for both classes, the model is balanced and performs significantly better than random guessing. 
+- Interpretation: The high accuracy (~78%) using only 6 numbers (sentiment scores) as input is impressive. It proves that VADER and TextBlob are powerful feature extractors. 
+- Error Analysis: The errors (approx. 22%) are likely due to complex linguistic features like sarcasm, double negatives (e.g., "I didn't hate it"), or context-dependent words that simple polarity scores cannot capture.
