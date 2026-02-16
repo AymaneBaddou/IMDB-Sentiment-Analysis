@@ -1,5 +1,5 @@
 1. ACCURACY REPORT
-The Multi-Layer Perceptron (MLP) model achieved a final test accuracy of 0.7794 (approx. 77.9%). 
+The Multi-Layer Perceptron (MLP) model achieved a final test accuracy of 0.7774 (approx. 77.4%). 
 This indicates that the model can correctly predict the sentiment of a movie review nearly 78% of the time using only lexicon-based polarity scores (VADER and TextBlob). This is a strong baseline performance for a model that does not use complex word embeddings.
 
 2. LOSS CURVES ANALYSIS
